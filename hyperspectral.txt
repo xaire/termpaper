@@ -2,9 +2,9 @@ Reduction in Dimensions of Hyperspectral Images
 
 
 
-Authors Names: Rishabh Chhabra (13116055)
-                              Shashank Jaiswal (13116059)
-                              Shubham Raj       (13116064)
+Authors Names: Rishabh Chhabra  (13116055)
+               Shashank Jaiswal (13116059)
+               Shubham Raj      (13116064)
 
 
 
@@ -13,10 +13,32 @@ Abstract:  As the use of hyperspectral imaging techniques increases for various 
 
 Introduction:  Satellites transacts huge volumes of data between different sources. So reduction of these stack is necessary. Hyperspectral data use a number of dimensions which can be reduced by mapping them into lower order of dimensions without actually losing any considerable amount. Principal Component Analysis (PCA) is perhaps the most popular dimension reduction technique for hyperspectral data. The growth in data volumes due to the large increase in the spectral bands and high computational demands of PCA has prompted the need to develop a fast and efficient algorithm for PCA. In this work, we present on an implementation of Information Gain with PCA dimension reduction of hyper spectral data
 
+
 PCA: It is the optimal linear scheme for reducing a set of high dimensional vectors into a set of lower dimensional vectors. These lower dimensional vectors form a new coordinate system, called the 'principal components'. There are two types of methods for performing PCA, the matrix method, and the data method. In this work, we will focus on the matrix methods.
 
-Information gain : The information gain for an attribute is defined in terms of entropy as follows: The mutual information is equal to the total entropy for an attribute if for each of the attribute values a unique classification can be made for the result attribute. 
+Information gain : The information gain for an attribute is defined in terms of entropy as follows: The mutual information is equal to the total entropy for an attribute if for each of the attribute values a unique classification can be made for the result attribute. It is usually a good measure for deciding the relevance of an attribute (in our case a band). 
+
 Mathematically ---
 
 IG(T,a) = H(T) - H(T/a)         where IG- Information Gain, H(T)- total entropy and H(T/a)- entropy due to attribute 'a'. 
+
+
+
+
+Information Gain(main discription) :
+Information Gain is a measure of dependence between the feature and the class label. It is one of the most popular feature selection techniques as it is easy to compute and simple to interpret. The information gain of a given attribute X with respect to the class attribute Y is the reduction in uncertainty about the value of Y when we know the value of X, IG(X ,Y). So information gain of a feature or band X and the class labels Y is calculated as
+
+IG(X,Y) = H(X) - H(X/Y)               (1)
+
+
+Entropy (H) is a measure of the uncertainty associated with a random variable. H(X)
+and H(X|Y) is the entropy of band X and the entropy of band X after observing Class
+Y , respectively calculated as
+
+H(X) = -$p(x1)log(p(x1))               (2)  // where $- summation p(x)- probability and log is actually to the base '2'.
+H(X/Y) = -$p(y1)$p(x1/y1)log(p(x1/y1)) (3)
+       
+The maximum value of information gain is 1. A feature with a high information gain is relevant. Information gain is evaluated independently for each feature and the features with the top-k values are selected as the relevant features. Information Gain does not eliminate redundant features.
+
+
 
