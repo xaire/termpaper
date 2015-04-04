@@ -13,5 +13,7 @@ Abstract:  As the use of hyperspectral imaging techniques increases for various 
 
 Introduction:  Satellites transacts huge volumes of data between different sources. So reduction of these stack is necessary. Hyperspectral data use a number of dimensions which can be reduced by mapping them into lower order of dimensions without actually losing any considerable amount. Principal Component Analysis (PCA) is perhaps the most popular dimension reduction technique for hyperspectral data. The growth in data volumes due to the large increase in the spectral bands and high computational demands of PCA has prompted the need to develop a fast and efficient algorithm for PCA. In this work, we present on an implementation of Information Gain with PCA dimension reduction of hyper spectral data
 
+PCA: It is the optimal linear scheme for reducing a set of high dimensional vectors into a set of lower dimensional vectors. These lower dimensional vectors form a new coordinate system, called the 'principal components'. There are two types of methods for performing PCA, the matrix method, and the data method. In this work, we will focus on the matrix methods.
+
 Information gain : The information gain for an attribute is defined in terms of entropy as follows: The mutual information is equal to the total entropy for an attribute if for each of the attribute values a unique classification can be made for the result attribute.
 
