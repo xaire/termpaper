@@ -30,10 +30,7 @@ Mathematically ---
 
 IG(T,a) = H(T) - H(T/a)         where IG- Information Gain, H(T)- total entropy and H(T/a)- entropy due to attribute 'a'. 
 
-
-
-
-Information Gain(main discription) :
+Information Gain(main description) :
 Information Gain is a measure of dependence between the feature and the class label. It is one of the most popular feature selection techniques as it is easy to compute and simple to interpret. The information gain of a given attribute X with respect to the class attribute Y is the reduction in uncertainty about the value of Y when we know the value of X, IG(X ,Y). So information gain of a feature or band X and the class labels Y is calculated as
 
 IG(X,Y) = H(X) - H(X/Y)               (1)
@@ -49,4 +46,10 @@ H(X/Y) = -$p(y1)$p(x1/y1)log(p(x1/y1)) (3)
 The maximum value of information gain is 1. A feature with a high information gain is relevant. Information gain is evaluated independently for each feature and the features with the top-k values are selected as the relevant features. Information Gain does not eliminate redundant features.
 
 
+
+Combining IG and PCA
+Dimensionality reduction is divided into two main domains, feature selection and feature extraction. Feature selection tries to find a subset of the original higher order variables and feature extraction transforms the data in high dimensional space to a lower dimensional. A method combining the approaches taken by both the techniques is proposed such that
+X Band Selected = PCA of Band ∩ IG of Band 
+
+This method finds a subset of lower dimensions and transforms it into further lower dimensions.      
 
