@@ -14,7 +14,7 @@ Abstract:  As the use of hyperspectral imaging techniques increases for various 
 Introduction:  Satellites transacts huge volumes of data between different sources. So reduction of these stack is necessary. Hyperspectral data use a number of dimensions which can be reduced by mapping them into lower order of dimensions without actually losing any considerable amount. Principal Component Analysis (PCA) is perhaps the most popular dimension reduction technique for hyperspectral data. The growth in data volumes due to the large increase in the spectral bands and high computational demands of PCA has prompted the need to develop a fast and efficient algorithm for PCA. In this work, we present on an implementation of Information Gain with PCA dimension reduction of hyper spectral data
 
 
-PCA: It is the optimal linear scheme for reducing a set of high dimensional vectors into a set of lower dimensional vectors. These lower dimensional vectors form a new coordinate system, called the 'principal components'. Given a set of data on n dimensions, PCA aims to find a linear subspace of dimension d lower than n such that the data points lie mainly on this linear subspace There are two types of methods for performing PCA, the matrix method, and the data method. In this work, we will focus on the matrix methods.
+PCA: It is the optimal linear scheme for reducing a set of high dimensional vectors into a set of lower dimensional vectors.The objective of PCA is to perform dimensionality reduction while preserving as much of the randomness in the high-dimensional space as possible. These lower dimensional vectors form a new coordinate system, called the 'principal components'. Given a set of data on n dimensions, PCA aims to find a linear subspace of dimension d lower than n such that the data points lie mainly on this linear subspace There are two types of methods for performing PCA, the matrix method, and the data method. In this work, we will focus on the matrix methods.
 
 1. Compute covariance matrix Cx , CX ≡ (1/n)(X*X^T)
 2. We select the matrix P to be a matrix where each row pi
@@ -30,10 +30,7 @@ Mathematically ---
 
 IG(T,a) = H(T) - H(T/a)         where IG- Information Gain, H(T)- total entropy and H(T/a)- entropy due to attribute 'a'. 
 
-
-
-
-Information Gain(main discription) :
+Information Gain(main description) :
 Information Gain is a measure of dependence between the feature and the class label. It is one of the most popular feature selection techniques as it is easy to compute and simple to interpret. The information gain of a given attribute X with respect to the class attribute Y is the reduction in uncertainty about the value of Y when we know the value of X, IG(X ,Y). So information gain of a feature or band X and the class labels Y is calculated as
 
 IG(X,Y) = H(X) - H(X/Y)               (1)
@@ -49,4 +46,10 @@ H(X/Y) = -$p(y1)$p(x1/y1)log(p(x1/y1)) (3)
 The maximum value of information gain is 1. A feature with a high information gain is relevant. Information gain is evaluated independently for each feature and the features with the top-k values are selected as the relevant features. Information Gain does not eliminate redundant features.
 
 
+
+Combining IG and PCA
+Dimensionality reduction is divided into two main domains, feature selection and feature extraction. Feature selection tries to find a subset of the original higher order variables and feature extraction transforms the data in high dimensional space to a lower dimensional. A method combining the approaches taken by both the techniques is proposed such that
+X Band Selected = PCA of Band ∩ IG of Band 
+
+This method finds a subset of lower dimensions and transforms it into further lower dimensions.      
 
