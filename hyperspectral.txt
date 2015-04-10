@@ -1,4 +1,4 @@
-Reduction in Dimensions of Hyperspectral Images
+﻿Reduction in Dimensions of Hyperspectral Images
 
 
 
@@ -45,13 +45,38 @@ H(X/Y) = -$p(y1)$p(x1/y1)log(p(x1/y1)) (3)
        
 The maximum value of information gain is 1. A feature with a high information gain is relevant. Information gain is evaluated independently for each feature and the features with the top-k values are selected as the relevant features. Information Gain does not eliminate redundant features.
 
-
+x
 
 Combining IG and PCA
 Dimensionality reduction is divided into two main domains, feature selection and feature extraction. Feature selection tries to find a subset of the original higher order variables and feature extraction transforms the data in high dimensional space to a lower dimensional. A method combining the approaches taken by both the techniques is proposed such that
 X Band Selected = PCA of Band ∩ IG of Band 
 
-This method finds a subset of lower dimensions and transforms it into further lower dimensions.      
+This method finds a subset of lower dimensions and transforms it into further lower dimensions. 
+
+The formulation are as follows:-
+
+For PCA----
+
+The vector representation of image pixel vector is given by--
+
+xi = [x1,x2,.....,xn]<sup>T</sup><sub>i</sub>
+
+with all the pixel values be taken from correspondingg hyperspectral dimension. For huperspectral image with 'm' rows and 'n' columns of pixel then total will be M=m*n . The mean vector of all the image vector is
+
+m = (1/M)$ xi
+
+Cov(x) = E{(x-E(x))(x-E(x))<sup>T</sup>
+ therefore Cx = (1/M)$(xk-m)(xk-m)<sup>T</sup>   
+
+
+
+
+where pixel vector zi will form the first K bands of the PCA images.
+Such formed PCA bands have the highest contrast or variance in the first band and the lowest contrast or variance in the last band. Therefore, the first K PCA bands often contain the majority of information residing in the original hyperspectral images and can be used for more effective and accurate analyses because the number of image bands and the amount of image noise involved are reduced. 
+
+After this the new set of k bands are classified through Information gain removing the band with less information and more noise by setting threshold gain. Hence the number of bands are reduced.
+
+X Band Selected = PCA of Band ∩ IG of Band
 
 
 
