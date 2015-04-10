@@ -53,3 +53,9 @@ X Band Selected = PCA of Band ∩ IG of Band
 
 This method finds a subset of lower dimensions and transforms it into further lower dimensions.      
 
+
+
+Conclusion
+
+The study reveals that the combination of PCA and IG is a useful process for dimensionality reduction when compared to PCA or IG applied alone. Among
+all the obtained PCA bands, the first few (about 5) bands may contain most of the information contained in the entire hyperspectral image data. After the first 10 PCA bands, all other bands contain mostly noise. Classifications using these first 5 PCA bands yield accurate results and patterns of hyperspectral images. Misclassifications using PCA occur mainly due to non linear nature of data. The use of IG to further classify data ignificantly reduces the amount of data to be handled and achieves practically acceptable and accurate classification results that are comparable with those obtained using the entire hyperspectral image data. The complexity of the algorithm used to implement PCA takes up most of the time but the compromise doesn't overweigh the reduction in data to be handled and thus PCA is considered as a beneficial option. Comparing the classification results done by PCA-IG is done using clustering. The clusters formed using the unreduced set of hyperspectral data and the data whose dimensions were reduced using PCA-IG techniques were found to be close. The proximity of the clusters are not as expected when the data has non linear characteristics or when any of the assumptions including those of principal components being orthogonal are not satisfied. Future research efforts will include adding more quantitative and qualitative measures to the PCA-IG technique to further refine the process of dimensionality reduction.    		
